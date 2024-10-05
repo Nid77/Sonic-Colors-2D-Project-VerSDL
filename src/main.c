@@ -123,7 +123,7 @@ int main(int argc, char *argv[]){
 
 
     SDL_Surface *icon = NULL;
-    icon = IMG_Load("bin/res/img/Icon/SonicColors2D_icon.jpg");
+    icon = IMG_Load("assets/images/Icon/SonicColors2D_icon.jpg");
     SDL_SetWindowIcon(window, icon);
     SDL_FreeSurface(icon);
 
@@ -149,7 +149,7 @@ int WorldMap(){
 
 
     SDL_Rect rectworld;
-    SDL_Texture *tworld=SDL_LoadImage(renderer,"bin/res/img/worldmapbis.png",tworld);
+    SDL_Texture *tworld=SDL_LoadImage(renderer,"assets/images/UI_MENU/worldmapbis.png",tworld);
     SDL_QueryTexture(tworld, NULL, NULL, &rectworld.w, &rectworld.h);
     rectworld.y=0;
     rectworld.x=(WINDOWS_WIDTH/2)-(rectworld.w/2);
@@ -157,18 +157,18 @@ int WorldMap(){
     SDL_SetWindowPosition(window,SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
 
     Load_Cursor();
-    Mix_Music* WorldMapSound=Mix_LoadMUS("bin/res/audio/Ost/WorldMap.mp3");
+    Mix_Music* WorldMapSound=Mix_LoadMUS("assets/sounds/Ost/WorldMap.mp3");
     Mix_PlayMusic(WorldMapSound, -1);
     Load_bg_worldmap();
-    Mix_Chunk *Worldmapcursor = Mix_LoadWAV("bin/res/audio/sound/system/SYS_Wmap_Set.wav");
-    Mix_Chunk *decide = Mix_LoadWAV("bin/res/audio/sound/system/SYS_Worldmap_Decide.wav");
-    Mix_Chunk *unlockplanetsound=Mix_LoadWAV("bin/res/audio/sound/system/SYS_Worldmap_Ng.wav");
+    Mix_Chunk *Worldmapcursor = Mix_LoadWAV("assets/sounds/sound/system/SYS_Wmap_Set.wav");
+    Mix_Chunk *decide = Mix_LoadWAV("assets/sounds/sound/system/SYS_Worldmap_Decide.wav");
+    Mix_Chunk *unlockplanetsound=Mix_LoadWAV("assets/sounds/sound/system/SYS_Worldmap_Ng.wav");
     if (!Worldmapcursor){printf("%s\n",Mix_GetError() );}
     if (!decide){printf("%s\n",Mix_GetError() );}
 
     int count[7]={0,0,0,0,0,0,0};
     Init_keys();
-    tcadena=SDL_LoadImage(renderer,"bin/res/img/cadenas.png",tcadena);
+    tcadena=SDL_LoadImage(renderer,"assets/images/UI_MENU/cadenas.png",tcadena);
     SDL_QueryTexture(tcadena,NULL,NULL,&rectcadena.w,&rectcadena.h);
     selectcursor=0;
     bool launchingg=true;
@@ -292,8 +292,8 @@ int AreaMap(){
     Load_AreaElement();
     SDL_SetWindowSize(window, Areafond[AreaMapIndex].w,Areafond[AreaMapIndex].h);
     SDL_SetWindowPosition(window,SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
-    Mix_Chunk *decideb=Mix_LoadWAV("bin/res/audio/sound/system/SYS_Wmap_Decide.wav");
-    Mix_Chunk *unlockactsound=Mix_LoadWAV("bin/res/audio/sound/system/SYS_Amap_Act_Unlock.wav");
+    Mix_Chunk *decideb=Mix_LoadWAV("assets/sounds/sound/system/SYS_Wmap_Decide.wav");
+    Mix_Chunk *unlockactsound=Mix_LoadWAV("assets/sounds/sound/system/SYS_Amap_Act_Unlock.wav");
     if (!decideb){printf("%s\n",Mix_GetError() );}
 
     Mix_PlayMusic(Areasound, -1);

@@ -80,12 +80,12 @@ int indexstars=0;
 int tempstars=0;
 int chargestars=0;
 int Posstars[6][2]={{94,200},{286,240},{322,416},{872,382},{762,200},{598,490}};
-const char *stars_path[6]={"bin/res/img/stars1.png",
-                        "bin/res/img/stars2.png",
-                        "bin/res/img/stars3.png",
-                        "bin/res/img/stars4.png",
-                        "bin/res/img/stars5.png",
-                        "bin/res/img/stars6.png"};
+const char *stars_path[6]={"assets/images/UI_MENU/stars1.png",
+                        "assets/images/UI_MENU/stars2.png",
+                        "assets/images/UI_MENU/stars3.png",
+                        "assets/images/UI_MENU/stars4.png",
+                        "assets/images/UI_MENU/stars5.png",
+                        "assets/images/UI_MENU/stars6.png"};
 SDL_Texture *tborderworld=NULL;
 SDL_Rect borderworld={0,20,0,0};
 SDL_Texture *twispemplacement=NULL;
@@ -94,29 +94,29 @@ SDL_Rect wispemplacement={0,20,0,0};
 int Poswispemplacement[2][2]={{280,10},{320,10}};
 SDL_Rect wispindex[10]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
 SDL_Texture *twispindex[10]={NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL};
-const char *wispindex_path[10]={"bin/res/img/indexburst.png",
-                                "bin/res/img/indexlaser.png",
-                                "bin/res/img/indexdrill.png",
-                                "bin/res/img/indexrocket.png",
-                                "bin/res/img/indexvoid.png",
-                                "bin/res/img/indexhover.png",
-                                "bin/res/img/indexspike.png",
-                                "bin/res/img/indexfrenzy.png",
-                                "bin/res/img/indexcube.png",
-                                "bin/res/img/indexghost.png"
+const char *wispindex_path[10]={"assets/images/UI_MENU/indexburst.png",
+                                "assets/images/UI_MENU/indexlaser.png",
+                                "assets/images/UI_MENU/indexdrill.png",
+                                "assets/images/UI_MENU/indexrocket.png",
+                                "assets/images/UI_MENU/indexvoid.png",
+                                "assets/images/UI_MENU/indexhover.png",
+                                "assets/images/UI_MENU/indexspike.png",
+                                "assets/images/UI_MENU/indexfrenzy.png",
+                                "assets/images/UI_MENU/indexcube.png",
+                                "assets/images/UI_MENU/indexghost.png"
                                 };
 
 
 SDL_Rect titlelevel[8]={{0,10,0,0},{0,10,0,0},{0,10,0,0},{0,10,0,0},{0,10,0,0},{0,10,0,0},{0,10,0,0},{0,20,0,0}};
 SDL_Texture *ttitlelevel[8]={NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL};
-const char *titlelevel_path[8]={"bin/res/img/TropicalResort/TropicalResortText.png",
-                            "bin/res/img/SweetMountain/SweetMountainText.png",
-                            "bin/res/img/StarlightCarnival/StarlightCarnivalText.png",
-                            "bin/res/img/PlanetWisp/PlanetWispText.png",
-                            "bin/res/img/AquariumPark/AquariumParkText.png",
-                            "bin/res/img/AsteroidCoaster/AsteroidCoasterText.png",
-                            "bin/res/img/TerminalVelocity/TerminalVelocityText.png",
-                            "bin/res/img/GameLand/GameLandText.png"
+const char *titlelevel_path[8]={"assets/images/TropicalResort/TropicalResortText.png",
+                            "assets/images/SweetMountain/SweetMountainText.png",
+                            "assets/images/StarlightCarnival/StarlightCarnivalText.png",
+                            "assets/images/PlanetWisp/PlanetWispText.png",
+                            "assets/images/AquariumPark/AquariumParkText.png",
+                            "assets/images/AsteroidCoaster/AsteroidCoasterText.png",
+                            "assets/images/TerminalVelocity/TerminalVelocityText.png",
+                            "assets/images/GameLand/GameLandText.png"
                             };
 
 
@@ -132,9 +132,9 @@ int Load_cadena(){
 
 int Load_bg_worldmap(){
 
-    tborderworld=SDL_LoadImage(renderer,"bin/res/img/borderlineworld.png",tborderworld);
+    tborderworld=SDL_LoadImage(renderer,"assets/images/UI_MENU/borderlineworld.png",tborderworld);
     SDL_QueryTexture(tborderworld,NULL,NULL,&borderworld.w,&borderworld.h);
-    twispemplacement=SDL_LoadImage(renderer,"bin/res/img/wispemplacement.png",twispemplacement);
+    twispemplacement=SDL_LoadImage(renderer,"assets/images/UI_MENU/wispemplacement.png",twispemplacement);
     SDL_QueryTexture(twispemplacement,NULL,NULL,&wispemplacement.w,&wispemplacement.h);
     //borderworld.w+=20;
     //borderworld.h+=20;

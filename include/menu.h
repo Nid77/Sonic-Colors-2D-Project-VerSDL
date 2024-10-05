@@ -53,11 +53,11 @@ typedef enum PATH {
 int main_menu() {
 
 
-    SDL_Texture *tfond=SDL_LoadImage(renderer,"bin/res/img/mainmenu.png",tfond);
+    SDL_Texture *tfond=SDL_LoadImage(renderer,"assets/images/UI_MENU/mainmenu.png",tfond);
     SDL_Rect rectfond={0,0,0,0};
     SDL_QueryTexture(tfond, NULL, NULL, &rectfond.w, &rectfond.h);
 
-    SDL_Texture *tlogo=SDL_LoadImage(renderer,"bin/res/img/logo.png",tlogo);
+    SDL_Texture *tlogo=SDL_LoadImage(renderer,"assets/images/UI_MAINMENU/logo.png",tlogo);
     SDL_Rect rectlogo;
     SDL_QueryTexture(tlogo, NULL, NULL, &rectlogo.w, &rectlogo.h);
     rectlogo.w*=0.6;
@@ -68,15 +68,15 @@ int main_menu() {
 
     const char *text="PRESS ENTER";
 
-    TTF_Font *font=TTF_OpenFont("bin/res/font/Syntha.ttf", 40);
-    TTF_Font *font2=TTF_OpenFont("bin/res/font/NiseSegaSonic.ttf",30);
+    TTF_Font *font=TTF_OpenFont("assets/fonts/Syntha.ttf", 40);
+    TTF_Font *font2=TTF_OpenFont("assets/fonts/NiseSegaSonic.ttf",30);
     if (!font){ printf("%s\n",TTF_GetError() );}
     if (!font2){ printf("%s\n",TTF_GetError() );}
 
     SDL_Color color2={255,127,0,255};
     SDL_Surface * surface = TTF_RenderText_Solid(font2, text , colorwhite);
     SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, surface);
-    SDL_Texture *tfangametext=SDL_LoadImage(renderer,"bin/res/img/fangametext.png",tfangametext);
+    SDL_Texture *tfangametext=SDL_LoadImage(renderer,"assets/images/UI_MAINMENU/fangametext.png",tfangametext);
 
 
     SDL_Rect fangametext;
@@ -94,12 +94,12 @@ int main_menu() {
 
     SDL_Rect list_sonicfront[6]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
     SDL_Texture *tlist_sonicfront[6]={NULL,NULL,NULL,NULL,NULL,NULL};
-    const char *sonicfront_path[6]={"bin/res/img/SonicSprite/SonicColorsSrpite/s_intro1.png",
-                                    "bin/res/img/SonicSprite/SonicColorsSrpite/s_intro2.png",
-                                    "bin/res/img/SonicSprite/SonicColorsSrpite/s_intro3.png",
-                                    "bin/res/img/SonicSprite/SonicColorsSrpite/s_intro4.png",
-                                    "bin/res/img/SonicSprite/SonicColorsSrpite/s_intro5.png",
-                                    "bin/res/img/SonicSprite/SonicColorsSrpite/s_intro6.png"};
+    const char *sonicfront_path[6]={"assets/images/SonicSprite/SonicColorsSrpite/s_intro1.png",
+                                    "assets/images/SonicSprite/SonicColorsSrpite/s_intro2.png",
+                                    "assets/images/SonicSprite/SonicColorsSrpite/s_intro3.png",
+                                    "assets/images/SonicSprite/SonicColorsSrpite/s_intro4.png",
+                                    "assets/images/SonicSprite/SonicColorsSrpite/s_intro5.png",
+                                    "assets/images/SonicSprite/SonicColorsSrpite/s_intro6.png"};
 
 
 
@@ -127,12 +127,12 @@ int main_menu() {
                             {NULL,NULL,NULL,NULL}};
 
 
-    const char *list_wispath[6][4]={"bin/res/img/Wisps/wispintro/yacker.png","bin/res/img/Wisps/wispintro/yacker2.png","bin/res/img/Wisps/wispintro/yacker.png","bin/res/img/Wisps/wispintro/yacker.png",
-                                "bin/res/img/Wisps/wispintro/burst.png","bin/res/img/Wisps/wispintro/burst2.png","bin/res/img/Wisps/wispintro/burst3.png","bin/res/img/Wisps/wispintro/burst4.png",
-                                "bin/res/img/Wisps/wispintro/laser.png","bin/res/img/Wisps/wispintro/laser2.png","bin/res/img/Wisps/wispintro/laser3.png","bin/res/img/Wisps/wispintro/laser4.png",
-                                "bin/res/img/Wisps/wispintro/drill.png","bin/res/img/Wisps/wispintro/drill2.png","bin/res/img/Wisps/wispintro/drill3.png","bin/res/img/Wisps/wispintro/drill4.png",
-                                "bin/res/img/Wisps/wispintro/rocket.png","bin/res/img/Wisps/wispintro/rocket2.png","bin/res/img/Wisps/wispintro/rocket3.png","bin/res/img/Wisps/wispintro/rocket4.png",
-                                "bin/res/img/Wisps/wispintro/void.png","bin/res/img/Wisps/wispintro/void2.png","bin/res/img/Wisps/wispintro/void3.png","bin/res/img/Wisps/wispintro/void4.png"};
+    const char *list_wispath[6][4]={"assets/images/WispsSprite/wispintro/yacker.png","assets/images/WispsSprite/wispintro/yacker2.png","assets/images/WispsSprite/wispintro/yacker.png","assets/images/WispsSprite/wispintro/yacker.png",
+                                "assets/images/WispsSprite/wispintro/burst.png","assets/images/WispsSprite/wispintro/burst2.png","assets/images/WispsSprite/wispintro/burst3.png","assets/images/WispsSprite/wispintro/burst4.png",
+                                "assets/images/WispsSprite/wispintro/laser.png","assets/images/WispsSprite/wispintro/laser2.png","assets/images/WispsSprite/wispintro/laser3.png","assets/images/WispsSprite/wispintro/laser4.png",
+                                "assets/images/WispsSprite/wispintro/drill.png","assets/images/WispsSprite/wispintro/drill2.png","assets/images/WispsSprite/wispintro/drill3.png","assets/images/WispsSprite/wispintro/drill4.png",
+                                "assets/images/WispsSprite/wispintro/rocket.png","assets/images/WispsSprite/wispintro/rocket2.png","assets/images/WispsSprite/wispintro/rocket3.png","assets/images/WispsSprite/wispintro/rocket4.png",
+                                "assets/images/WispsSprite/wispintro/void.png","assets/images/WispsSprite/wispintro/void2.png","assets/images/WispsSprite/wispintro/void3.png","assets/images/WispsSprite/wispintro/void4.png"};
     for(int i=0;i<6;i++){
         for(int j=0;j<4;j++){
             tlist_wisp[i][j]=SDL_LoadImage(renderer,list_wispath[i][j],tlist_wisp[i][j]);
@@ -163,9 +163,9 @@ int main_menu() {
     }
 
 
-    SDL_Texture *newgame=SDL_LoadImage(renderer,"bin/res/img/newgame.png",newgame);
-    SDL_Texture *tcontinue=SDL_LoadImage(renderer,"bin/res/img/continue.png",tcontinue);//
-    SDL_Texture *select=SDL_LoadImage(renderer,"bin/res/img/select.png",select);
+    SDL_Texture *newgame=SDL_LoadImage(renderer,"assets/images/UI_MAINMENU/newgame.png",newgame);
+    SDL_Texture *tcontinue=SDL_LoadImage(renderer,"assets/images/UI_MAINMENU/continue.png",tcontinue);//
+    SDL_Texture *select=SDL_LoadImage(renderer,"assets/images/UI_MAINMENU/select.png",select);
 
     SDL_Rect rectnewgame;
     SDL_Rect rectcontinue;
@@ -192,9 +192,10 @@ int main_menu() {
 
 
     Mix_Music* bg_sound=NULL;
-    bg_sound = Mix_LoadMUS("bin/res/audio/Ost/ThemeofSonicColorsTitle.mp3");
+    bg_sound = Mix_LoadMUS("assets/sounds/Ost/ThemeofSonicColorsTitle.mp3");
     if (!bg_sound){printf("%s\n",Mix_GetError() );}
     Mix_PlayMusic(bg_sound, -1);
+    Mix_VolumeMusic(10);
     bool launching = true;
 
     while (launching) {
@@ -304,7 +305,7 @@ int main_menu() {
 
 
 SDL_Texture *SDL_LoadText(const char *text,SDL_Renderer * renderer ,TTF_Font *font, SDL_Color color){
-  //TTF_Font *fontt=TTF_OpenFont("C:/Users/THOMSON/Desktop/Save/Project_sonic/bin/res/font/NiseSegaSonic.ttf", 25);
+  //TTF_Font *fontt=TTF_OpenFont("C:/Users/THOMSON/Desktop/Save/Project_sonic/assets/fonts/NiseSegaSonic.ttf", 25);
   SDL_Surface * surface = TTF_RenderText_Solid(font, text , color);
   SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, surface);
 

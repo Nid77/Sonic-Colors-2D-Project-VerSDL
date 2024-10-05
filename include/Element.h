@@ -12,30 +12,30 @@ int indexAreaAnim=1;
 int tempaAreaAnim=0;
 SDL_Rect levelArea[4]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
 SDL_Texture *tlevelArea[4]={NULL,NULL,NULL,NULL};
-const char *levelArea_path[4]={"bin/res/img/ObjectSprite/locklevelact.png",
-                            "bin/res/img/ObjectSprite/levelact1.png",
-                            "bin/res/img/ObjectSprite/levelact2.png",
-                            "bin/res/img/ObjectSprite/levelact3.png"};
-//C:/Users/THOMSON/Desktop/Save/Sonic/Project_sonic/bin/res/img/ObjectSprite/
+const char *levelArea_path[4]={"assets/images/ElementSprite/locklevelact.png",
+                            "assets/images/ElementSprite/levelact1.png",
+                            "assets/images/ElementSprite/levelact2.png",
+                            "assets/images/ElementSprite/levelact3.png"};
+//C:/Users/THOMSON/Desktop/Save/Sonic/Project_sonic/assets/images/ElementSprite/
 
 SDL_Rect Areafond[7]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
 SDL_Texture *tAreafond[7]={NULL,NULL,NULL,NULL,NULL,NULL,NULL};
 
-const char *Areafond_path[7]={"bin/res/img//TropicalResort/TropicalResortMap.png",
-                            "bin/res/img/SweetMountain/SweetMountainMap.png",
-                            "bin/res/img/StarlightCarnival/StarlightCarnivalMap.png",
-                            "bin/res/img/PlanetWisp/PlanetWispMap.png",
-                            "bin/res/img/AquariumPrak/AquariumPrakMap.png",
-                            "bin/res/img/AsteoridCoaster/AsteoridCoasterMap.png",
-                            "bin/res/img/Terminalvelocity/TerminalvelocityMap.png"
+const char *Areafond_path[7]={"assets/images//TropicalResort/TropicalResortMap.png",
+                            "assets/images/SweetMountain/SweetMountainMap.png",
+                            "assets/images/StarlightCarnival/StarlightCarnivalMap.png",
+                            "assets/images/PlanetWisp/PlanetWispMap.png",
+                            "assets/images/AquariumPrak/AquariumPrakMap.png",
+                            "assets/images/AsteoridCoaster/AsteoridCoasterMap.png",
+                            "assets/images/Terminalvelocity/TerminalvelocityMap.png"
                             };
-const char *Areasound_path[7]={"bin/res/audio/Ost/TropicalResort/AreaTropicalResort.mp3",
-                            "bin/res/audio/Ost/SweetMountain/AreaSweetMountain.mp3",
-                            "bin/res/audio/Ost/StarlightCarnival/AreaStarlightCarnival.mp3",
-                            "bin/res/audio/Ost/PlanetWisp/AreaPlanetWisp.mp3",
-                            "bin/res/audio/Ost/AquariumPrak/AreaAquariumPrak.mp3",
-                            "bin/res/audio/Ost/AsteoridCoaster/AreaAsteoridCoaster.mp3",
-                            "bin/res/audio/Ost/Terminalvelocity/AreaTerminalvelocity.mp3"
+const char *Areasound_path[7]={"assets/sounds/Ost/TropicalResort/AreaTropicalResort.mp3",
+                            "assets/sounds/Ost/SweetMountain/AreaSweetMountain.mp3",
+                            "assets/sounds/Ost/StarlightCarnival/AreaStarlightCarnival.mp3",
+                            "assets/sounds/Ost/PlanetWisp/AreaPlanetWisp.mp3",
+                            "assets/sounds/Ost/AquariumPrak/AreaAquariumPrak.mp3",
+                            "assets/sounds/Ost/AsteoridCoaster/AreaAsteoridCoaster.mp3",
+                            "assets/sounds/Ost/Terminalvelocity/AreaTerminalvelocity.mp3"
                             };
 
 
@@ -51,7 +51,7 @@ int Load_AreaElement(){
     SDL_QueryTexture(tAreafond[AreaMapIndex], NULL, NULL, &Areafond[AreaMapIndex].w, &Areafond[AreaMapIndex].h);
     Areasound=Mix_LoadMUS(Areasound_path[AreaMapIndex]);
     if (!Areasound){printf("%s\n",Mix_GetError() );}
-    tSonicArea=SDL_LoadImage(renderer,"bin/res/img/ObjectSprite/SonicHead.png",tSonicArea);
+    tSonicArea=SDL_LoadImage(renderer,"assets/images/ElementSprite/SonicHead.png",tSonicArea);
     SDL_QueryTexture(tSonicArea,NULL,NULL,&SonicArea.w,&SonicArea.h);
     for(int i=0;i<4;i++){
         tlevelArea[i]=SDL_LoadImage(renderer,levelArea_path[i],tlevelArea[i]);
@@ -82,18 +82,18 @@ Mix_Chunk *pausedsound=NULL;
 
 int Load_PauseElement(){
 
-    pausedsound=Mix_LoadWAV("bin/res/audio/sound/system/SYS_Actstg_Pausedecide.wav");
+    pausedsound=Mix_LoadWAV("assets/sounds/sound/system/SYS_Actstg_Pausedecide.wav");
 
-    pause=SDL_LoadImage(renderer,"bin/res/img/pause.png",pause);
+    pause=SDL_LoadImage(renderer,"assets/images/UI_PAUSE/pause.png",pause);
     SDL_QueryTexture(pause,NULL,NULL,&rectPause.w,&rectPause.h);
 
 
-    pausefond=SDL_LoadImage(renderer,"bin/res/img/pausefond.png",pausefond);
+    pausefond=SDL_LoadImage(renderer,"assets/images/UI_PAUSE/pausefond.png",pausefond);
     SDL_QueryTexture(pausefond,NULL,NULL,&rectPausefond.w,&rectPausefond.h);
 
-    selectpause=SDL_LoadImage(renderer,"bin/res/img/selectpause.png",selectpause);
+    selectpause=SDL_LoadImage(renderer,"assets/images/UI_PAUSE/selectpause.png",selectpause);
     SDL_QueryTexture(selectpause,NULL,NULL,&rectselectpause.w,&rectselectpause.h);
-    TTF_Font *font=TTF_OpenFont("bin/res/font/NiseSegaSonic.ttf",30);
+    TTF_Font *font=TTF_OpenFont("assets/fonts/NiseSegaSonic.ttf",30);
     if (!font){ printf("%s\n",TTF_GetError() );}
 
 
@@ -120,15 +120,15 @@ int Load_PauseElement(){
 
 
 
-    pausecursorsound=Mix_LoadWAV("bin/res/audio/sound/system/SYS_Actstg_Pausecursor.wav");
+    pausecursorsound=Mix_LoadWAV("assets/sounds/sound/system/SYS_Actstg_Pausecursor.wav");
 
 }
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 SDL_Rect list_number[]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
 SDL_Texture *tlist_number[]={NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL};
-const char *list_number_path[]={"bin/res/img/0.png","bin/res/img/1.png","bin/res/img/2.png","bin/res/img/3.png","bin/res/img/4.png",
-                                "bin/res/img/5.png","bin/res/img/6.png","bin/res/img/7.png","bin/res/img/8.png","bin/res/img/9.png",};
+const char *list_number_path[]={"assets/images/UI/0.png","assets/images/UI/1.png","assets/images/UI/2.png","assets/images/UI/3.png","assets/images/UI/4.png",
+                                "assets/images/UI/5.png","assets/images/UI/6.png","assets/images/UI/7.png","assets/images/UI/8.png","assets/images/UI/9.png",};
 
 SDL_Rect rectsoniccore={0,0,0,0};
 SDL_Rect rectdeuxpoint={87,90,0,0};
@@ -146,11 +146,11 @@ int Load_SonicScore(){
     }
 
 
-    sonic_score=SDL_LoadImage(renderer,"bin/res/img/sonic_scoreboard.png",sonic_score);
+    sonic_score=SDL_LoadImage(renderer,"assets/images/UI/sonic_scoreboard.png",sonic_score);
     SDL_QueryTexture(sonic_score,NULL,NULL,&rectsoniccore.w,&rectsoniccore.h);
-    deuxpoint=SDL_LoadImage(renderer,"bin/res/img/deuxpoint.png",deuxpoint);
+    deuxpoint=SDL_LoadImage(renderer,"assets/images/UI/deuxpoint.png",deuxpoint);
     SDL_QueryTexture(deuxpoint,NULL,NULL,&rectdeuxpoint.w,&rectdeuxpoint.h);
-    point=SDL_LoadImage(renderer,"bin/res/img/point.png",point);
+    point=SDL_LoadImage(renderer,"assets/images/UI/point.png",point);
     SDL_QueryTexture(point,NULL,NULL,&rectpoint.w,&rectpoint.h);
 
 
@@ -162,7 +162,7 @@ SDL_Texture *gameovertext=NULL;
 SDL_Rect rectgameovertext={0,0,0,0};
 
 int Load_GameOverElement(){
-    gameovertext=SDL_LoadImage(renderer,"bin/res/img/gameovertext.png",gameovertext);
+    gameovertext=SDL_LoadImage(renderer,"assets/images/UI/gameovertext.png",gameovertext);
     SDL_QueryTexture(point,NULL,NULL,&rectgameovertext.w,&rectgameovertext.h);
 }
 
@@ -172,37 +172,37 @@ int Load_GameOverElement(){
 SDL_Texture *tfondresult[7]={NULL,NULL,NULL,NULL,NULL,NULL,NULL};
 SDL_Rect fondresult[7]={{0,80,0,0},{0,20,0,0},{0,20,0,0},{0,20,0,0},{0,20,0,0},{0,20,0,0},{0,20,0,0}};
 
-const char *fondresult_path[7]={"bin/res/img//TropicalResort/ResultTropicalResort.png",
-                            "bin/res/img/SweetMountain/ResultSweetMountain.png",
-                            "bin/res/img/StarlightCarnival/ResultStarlightCarnival.png",
-                            "bin/res/img/PlanetWisp/ResultPlanetWisp.png",
-                            "bin/res/img/AquariumPrak/ResultAquariumPrak.png",
-                            "bin/res/img/AsteoridCoaster/AsteoridCoaster.png",
-                            "bin/res/img/Terminalvelocity/ResultTerminalvelocity.png"
+const char *fondresult_path[7]={"assets/images//TropicalResort/ResultTropicalResort.png",
+                            "assets/images/SweetMountain/ResultSweetMountain.png",
+                            "assets/images/StarlightCarnival/ResultStarlightCarnival.png",
+                            "assets/images/PlanetWisp/ResultPlanetWisp.png",
+                            "assets/images/AquariumPrak/ResultAquariumPrak.png",
+                            "assets/images/AsteoridCoaster/AsteoridCoaster.png",
+                            "assets/images/Terminalvelocity/ResultTerminalvelocity.png"
                         };
 
 SDL_Texture *trank[5]={NULL,NULL,NULL,NULL,NULL};
 SDL_Rect rank[5]={{WINDOWS_WIDTH/2+100,400,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
 
-const char *rank_path[5]={"bin/res/img/s.png",
-                        "bin/res/img/a.png",
-                        "bin/res/img/b.png",
-                        "bin/res/img/c.png",
-                        "bin/res/img/d.png"
+const char *rank_path[5]={"assets/images/UI_ENDLEVEL/s.png",
+                        "assets/images/UI_ENDLEVEL/a.png",
+                        "assets/images/UI_ENDLEVEL/b.png",
+                        "assets/images/UI_ENDLEVEL/c.png",
+                        "assets/images/UI_ENDLEVEL/d.png"
                         };
 
 SDL_Rect numberscore[9]={{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
 SDL_Texture *tnumberscore[9]={NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL};
 
-const char *numberscore_path[9]={"bin/res/img/0r.png",
-                                "bin/res/img/1r.png",
-                                "bin/res/img/2r.png",
-                                "bin/res/img/3r.png",
-                                "bin/res/img/4r.png",
-                                "bin/res/img/5r.png",
-                                "bin/res/img/6r.png",
-                                "bin/res/img/7r.png",
-                                "bin/res/img/9r.png"
+const char *numberscore_path[9]={"assets/images/UI_ENDLEVEL/0r.png",
+                                "assets/images/UI_ENDLEVEL/1r.png",
+                                "assets/images/UI_ENDLEVEL/2r.png",
+                                "assets/images/UI_ENDLEVEL/3r.png",
+                                "assets/images/UI_ENDLEVEL/4r.png",
+                                "assets/images/UI_ENDLEVEL/5r.png",
+                                "assets/images/UI_ENDLEVEL/6r.png",
+                                "assets/images/UI_ENDLEVEL/7r.png",
+                                "assets/images/UI_ENDLEVEL/9r.png"
                                 };
 
 Mix_Music *resultscreensound=NULL;
@@ -229,8 +229,8 @@ SDL_Texture *ttimericon=NULL;
 
 SDL_Rect borderline[2]={{0,560,0,0},{0,60,0,0}};
 SDL_Texture *tborderline[2]={NULL,NULL};
-const char *borderline_path[2]={"bin/res/img/borderline.png",
-                                "bin/res/img/borderline2.png"};
+const char *borderline_path[2]={"assets/images/UI_ENDLEVEL/borderline.png",
+                                "assets/images/UI_ENDLEVEL/borderline2.png"};
 SDL_Rect ranktext={WINDOWS_WIDTH/2,340};
 SDL_Rect scoretext={WINDOWS_WIDTH/2,140};
 SDL_Rect resulttext={50,30};
@@ -243,31 +243,31 @@ SDL_Rect hud;
 
 
 int Load_ScreenResultElement(){
-    tranktext=SDL_LoadImage(renderer,"bin/res/img/ranktext.png",tranktext);
+    tranktext=SDL_LoadImage(renderer,"assets/images/UI/ranktext.png",tranktext);
     SDL_QueryTexture(tranktext,NULL,NULL,&ranktext.w,&ranktext.h);
-    tscoretext=SDL_LoadImage(renderer,"bin/res/img/scoretext.png",tscoretext);
+    tscoretext=SDL_LoadImage(renderer,"assets/images/UI/scoretext.png",tscoretext);
     SDL_QueryTexture(tscoretext,NULL,NULL,&scoretext.w,&scoretext.h);
-    tresulttext=SDL_LoadImage(renderer,"bin/res/img/resulttext.png",tresulttext);
+    tresulttext=SDL_LoadImage(renderer,"assets/images/UI/resulttext.png",tresulttext);
     SDL_QueryTexture(tresulttext,NULL,NULL,&resulttext.w,&resulttext.h);
-    thud=SDL_LoadImage(renderer,"bin/res/img/hud.png",thud);
+    thud=SDL_LoadImage(renderer,"assets/images/UI/hud.png",thud);
     SDL_QueryTexture(thud,NULL,NULL,&hud.w,&hud.h);
-    tsonicicon=SDL_LoadImage(renderer,"bin/res/img/sonicicon.png",tsonicicon);
+    tsonicicon=SDL_LoadImage(renderer,"assets/images/UI/sonicicon.png",tsonicicon);
     SDL_QueryTexture(tsonicicon,NULL,NULL,&sonicicon.w,&sonicicon.h);
-    ttimericon=SDL_LoadImage(renderer,"bin/res/img/timericon.png",ttimericon);
+    ttimericon=SDL_LoadImage(renderer,"assets/images/UI/timericon.png",ttimericon);
     SDL_QueryTexture(ttimericon,NULL,NULL,&timericon.w,&timericon.h);
-    tringicon=SDL_LoadImage(renderer,"bin/res/img/ringicon.png",tringicon);
+    tringicon=SDL_LoadImage(renderer,"assets/images/UI/ringicon.png",tringicon);
     SDL_QueryTexture(tringicon,NULL,NULL,&ringicon.w,&ringicon.h);
     /*
-    tpointbleu=SDL_LoadImage(renderer,"bin/res/img/pointbleu.png",tpointbleu);
+    tpointbleu=SDL_LoadImage(renderer,"assets/images/pointbleu.png",tpointbleu);
     SDL_QueryTexture(tpointbleu,NULL,NULL,&pointbleu.w,&pointbleu.h);
-    tdeuxpointbleu=SDL_LoadImage(renderer,"bin/res/img/deuxpointbleu.png",tdeuxpointbleu);
+    tdeuxpointbleu=SDL_LoadImage(renderer,"assets/images/deuxpointbleu.png",tdeuxpointbleu);
     SDL_QueryTexture(tdeuxpointbleu,NULL,NULL,&deuxpointbleu.w,&deuxpointbleu.h);
     */
     rectdeuxpoint.x=282;
     rectdeuxpoint.y=160;
     rectpoint.x=310;
     rectpoint.y=165;
-    resultscreensound=Mix_LoadMUS("bin/res/audio/Ost/ResultScreen.mp3");
+    resultscreensound=Mix_LoadMUS("assets/sounds/Ost/ResultScreen.mp3");
     tfondresult[AreaMapIndex]=SDL_LoadImage(renderer,fondresult_path[AreaMapIndex],tfondresult[AreaMapIndex]);
     SDL_QueryTexture(tfondresult[AreaMapIndex],NULL,NULL,&fondresult[AreaMapIndex].w,&fondresult[AreaMapIndex].h);
     for(int i=0;i<9;i++){
@@ -295,7 +295,7 @@ int Load_ScreenResultElement(){
 SDL_Texture *tcursormouse=NULL;
 SDL_Rect cursormouse;
 int Load_Cursor(){
-    tcursormouse=SDL_LoadImage(renderer,"bin/res/img/cursormouse.png",tcursormouse);
+    tcursormouse=SDL_LoadImage(renderer,"assets/images/UI_MENU/cursormouse.png",tcursormouse);
     SDL_QueryTexture(tcursormouse,NULL,NULL,&cursormouse.w,&cursormouse.h);
 }
 
