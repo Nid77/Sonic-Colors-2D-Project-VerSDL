@@ -1,0 +1,45 @@
+# Exclure tout le dossier bin (fichiers compilés, exécutables)
+bin/
+
+# Exclure les fichiers objets générés par la compilation
+*.o
+*.out
+*.exe
+*.dll
+*.so
+*.a
+
+# Exclure les fichiers de build temporaires
+build/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+
+# Exclure les fichiers de logs ou temporaires
+*.log
+*.tmp
+*.bak
+
+# Exclure les fichiers de configuration des IDE et éditeurs
+.vscode/
+.idea/
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Exclure les fichiers de backup créés automatiquement (par exemple, lors de l'édition)
+*~
+
+# Exclure les bibliothèques externes compilées, si elles sont dans le dossier lib
+lib/*.o        # Fichiers objets générés
+lib/*.so       # Bibliothèques partagées (exclure celles générées automatiquement)
+lib/*.dll      # Fichiers DLL générés
+lib/*.dylib    # Fichiers dynamiques sur macOS
+lib/*.la       # Fichiers Libtool
+lib/*.out      # Fichiers de sortie temporaires
+lib/*.log      # Fichiers logs
+!lib/*.a
+
+
+#Exlure les ressources
+assets/
