@@ -41,5 +41,4 @@ lib/*.log      # Fichiers logs
 !lib/*.a
 
 
-#Exlure les ressources
-assets/
+
